@@ -7,6 +7,8 @@
 
 import random
 
+
+#check if upper bound is valid
 upper_bound = int(input("What is the upper bound? "))
 
 
@@ -15,20 +17,21 @@ random_number = random.randint(1, upper_bound)
 print(random_number)
 
 user_guess = None
-
+number_of_guesses = 1
 while user_guess != random_number:
 
 #ask user to guess
     user_guess = int(input(f"What is your guess from 1 to {upper_bound}: "))
-
-    # Check if user guess == random number
+  
     if user_guess == random_number:
         print("You win!!")
         #exit the loop
     # User guess is != to random number
     else:
         print("You lose")
-print("Game over")
+        number_of_guesses += 1
+
+print(f"Game over you took {number_of_guesses} tries")
 
 
 # high_range = int(input(''))
